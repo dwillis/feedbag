@@ -99,7 +99,7 @@ class Feedbag
 
     begin
       user_agent = ENV["FEEDBAG_UA"] || USER_AGENT
-      html = open(url, "User-Agent" => user_agent, :allow_redirections => :safe) do |f|
+      html = open(url, 'r:binary', "User-Agent" => user_agent, :allow_redirections => :safe) do |f|
         content_type = f.content_type.downcase
         if content_type == "application/octet-stream" # open failed
           content_type = f.meta["content-type"].gsub(/;.*$/, '')
@@ -108,7 +108,7 @@ class Feedbag
           return self.add_feed(url, nil)
         end
 
-        doc = Nokogiri::HTML(f.read)
+        doc = Nokogiri::HTML.parse(f.read.toutf8, nil, 'UTF-8')
 
         if doc.at("base") and doc.at("base")["href"]
           @base_uri = doc.at("base")["href"]
