@@ -1,7 +1,7 @@
 Feedbag
 =======
 
-Feedbag is Ruby's favorite auto-discovery tool/library!
+Yet another fork of Feedbag, Ruby's favorite auto-discovery tool/library!
 
 ### Quick synopsis
 
@@ -35,15 +35,16 @@ You can also use the command line tool for quick queries, if you install the gem
 - Because it's a single file you can embed easily in your application.
 - Because it's faster than rfeedfinder.
 
-### Author
+### Why the fork?
+
+This fork introduce one new dependency to support HTTP redirection flow. Another enhancement such as:
+
+- Support for custom user agent, just set your preferred user agent from environment variable: `FEEDBAG_UA`
+- Better encoding conversion, specifically for Japanese sites with non utf8 encoding.
+
+### Original Author
 
 [David Moreno](http://damog.net/) <[david@axiombox.com](mailto:david@axiombox.com)>.
-
-### Donations
-
-![Superfeedr](http://damog.net/files/misc/superfeedr_150.png)
-
-[Superfeedr](http://superfeedr.com) has kindly financially [supported](https://github.com/damog/feedbag/issues/9) the development of Feedbag.
 
 ### Copyright
 
