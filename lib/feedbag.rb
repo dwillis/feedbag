@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-# Copyright (c) 2012 David Moreno <david@axiombox.com>
+# Copyright (c) 2008-2014 David Moreno <david@axiombox.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -165,7 +165,7 @@ class Feedbag
   end
 
   def looks_like_feed?(url)
-    if url =~ /(\.(rdf|xml|rdf|rss)$|feed=(rss|atom)|(atom|feed)\/?$)/i
+    if url =~ /(\.(rdf|xml|rss)$|feed=(rss|atom)|(atom|feed)\/?$)/i
       true
     else
       false
@@ -173,7 +173,7 @@ class Feedbag
   end
 
   def add_feed(feed_url, orig_url, base_uri = nil)
-    # $stderr.puts "#{feed_url} - #{orig_url}\n"
+    # puts "#{feed_url} - #{orig_url}"
     url = feed_url.sub(/^feed:/, '').strip
 
     if base_uri
