@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FeedbagTest < Test::Unit::TestCase
+class FeedbagTest < MiniTest::Unit::TestCase
 
   context "Feedbag.feed? should know that an RSS url is a feed" do
     setup do
